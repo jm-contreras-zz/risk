@@ -17,11 +17,19 @@ import pandas as pd
 # DECLARE VARIABLES
 
 main_dir = '/Users/jmcontreras/GitHub/risk/'
-ters_file = os.path.join(main_dir, 'territories.csv')
+file_names = {'borders': 'borders.csv',
+              'ters': 'territories.csv',
+              'b_cards': 'bonus_cards.csv',
+              'b_continents': 'bonus_continents.csv',
+              'b_ters': 'bonus_territories.csv'}
+ters_file = os.path.join(main_dir, file_names[key])
 n_players = 3
 
 
 # DEFINE FUNCTIONS
+
+def load_files(main_dir, file_names):
+    
 
 def assign_territories(ters, n_players):
     '''Assign each territory to a player. If even assignment is not possible,
@@ -52,6 +60,7 @@ ters = assign_territories(ters, n_ters)
 
 for p in range(1, n_players + 1):
     base = 3
+    n_ters_owned = (ters['player'] == p).sum()
     ter_bonus =
     continent_bonus = 
     card_bonus =
